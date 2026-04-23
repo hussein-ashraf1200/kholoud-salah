@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { CircleUserRound, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -36,11 +36,11 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/profile"
+              href="/dashboard"
               className="cursor-pointer text-[#115E59] hover:scale-110 transition flex items-center"
             >
               <CircleUserRound />
-              <span className="ml-1">Profile</span>
+              <span className="ml-1">dashboard</span>
             </Link>
           </li>
         </ul>
@@ -76,6 +76,15 @@ const Navbar = () => {
                 <a onClick={() => setIsOpen(false)} href="#contact">
                   Contact
                 </a>
+              </li>
+              <li>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href="/dashboard"
+                  className="cursor-pointer text-[#115E59] hover:scale-110 transition flex items-center"
+                >
+                  <CircleUserRound />
+                </Link>
               </li>
             </ul>
             <CircleUserRound />

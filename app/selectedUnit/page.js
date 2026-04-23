@@ -1,7 +1,12 @@
 export default function SelectedUnit() {
   return (
-    <main className="">
-      <h1 className="text-3xl text-[#134E4A] p-4">Selected Unit</h1>
-    </main>
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia quasi
+        sit in quidem recusandae possimus excepturi dolorem ea, magni eius
+        dolores et sapiente impedit fuga temporibus, accusamus vel accusantium
+        obcaecati.
+      </p>
+    </div>
   );
 }

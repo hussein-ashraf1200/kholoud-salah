@@ -3,6 +3,7 @@ import { Mail, MessageCircleCode, Phone } from "lucide-react";
 import React, { useRef } from "react";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const form = useRef();
@@ -10,8 +11,8 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs;
     emailjs
+
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -19,12 +20,13 @@ const Contact = () => {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
-        alert("Message sent successfully!");
+        toast.success("Successfully toasted!");
       })
       .catch((error) => {
         console.error("Failed to send:", error);
-        alert("Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.");
       });
+    console.log("KEY:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
   };
 
   return (
@@ -34,7 +36,7 @@ const Contact = () => {
     >
       {/* right side */}
       <div className="sm:w-1/3 w-full flex flex-col text-[#F5FEFF] p-2">
-        <h1 className="text-3xl font-bold mb-4">Let's Discuss Your Future</h1>
+        <h1 className="text-3xl font-bold mb-4">Let s Discuss Your Future</h1>
         <p>
           Ready to find your next investment or dream home? Reach out today for
           a confidential consultation.
