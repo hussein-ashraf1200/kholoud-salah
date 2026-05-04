@@ -5,10 +5,12 @@ import { Eye, MapPinHouse } from "lucide-react";
 import Link from "next/link";
 import { db } from "../lib/firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useSelectedProperty } from "../lib/SelectedPropertyContext";
 
 const Card = () => {
   const [visible, setVisible] = useState(4);
   const [properties, setProperties] = useState([]); // ✅ من Firestore
+  const { setSelectedProperty } = useSelectedProperty();
 
   // ✅ جيب البيانات من Firestore
   useEffect(() => {
@@ -41,14 +43,19 @@ const Card = () => {
               <div className="relative w-full h-48">
                 <Image
                   src={property.thumb || "/placeholder.png"} // ✅ thumb من Firestore
-                  fill
+                  width={400}
+                  height={400}
                   alt={property.title || "Property"}
                   className="object-cover"
                 />
               </div>
               <Link
                 className="text-[#134E4A] cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-[#F8FAFB] hover:bg-[#E0E0E0] transition"
-                href="/selectedUnit"
+                href={`/selectedUnit/${property.id}`}
+                onClick={() => {
+                  setSelectedProperty(property);
+                  console.log("Selected:", property);
+                }}
               >
                 <Eye />
               </Link>
@@ -78,7 +85,7 @@ const Card = () => {
       {visible < properties.length && (
         <div className="flex justify-center mt-6">
           <button
-            onClick={() => setVisible(visible + 3)}
+            onClick={() => setVisible(visible + 4)}
             className="w-32 p-2 rounded-2xl text-white bg-[#00666D] cursor-pointer hover:opacity-90"
           >
             Show More

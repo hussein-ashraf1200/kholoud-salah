@@ -20,9 +20,9 @@ export default function Profile() {
       </div>
 
       {/* Tabs */}
-      <div className="mt-6 sm:flex sm:justify-center sm:items-center grid  gap-4  grid-cols-2 ">
+      <div className="mt-6 sm:flex sm:justify-center  sm:items-center grid  gap-4  grid-cols-1 ">
         <button
-          className={`p-2 rounded-full w-32 sm:w-40 cursor-pointer  ${activeTab === "best" ? "bg-[#115E59] text-white" : "bg-gray-400 text-gray-900"}`}
+          className={`p-2 rounded-full w-34 sm:w-40 cursor-pointer  ${activeTab === "best" ? "bg-[#115E59] text-white" : "bg-gray-400 text-gray-900"}`}
           onClick={() => setActiveTab("best")}
         >
           Real State Units
@@ -36,7 +36,7 @@ export default function Profile() {
         </button>
 
         <button
-          className={`p-2 rounded-full w-32 sm:w-40 cursor-pointer ${activeTab === "reels" ? "bg-[#115E59] text-white" : "bg-gray-400 text-gray-900"}`}
+          className={`p-2 rounded-full w-34 sm:w-40 cursor-pointer ${activeTab === "reels" ? "bg-[#115E59] text-white" : "bg-gray-400 text-gray-900"}`}
           onClick={() => setActiveTab("reels")}
         >
           Skills

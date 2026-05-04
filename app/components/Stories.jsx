@@ -47,14 +47,14 @@ const StoriesSlider = () => {
   }
 
   return (
-    <div className="relative flex flex-col w-screen sm:w-full h-[60vh] sm:h-[60vh] md:h-[70vh] -mx-4 sm:mx-0 mt-4">
+    <div className="relative flex flex-col w-screen sm:w-full h-[40vh] sm:h-[60vh] md:h-[70vh] -mx-4 sm:mx-0 mt-4">
       {/* Image */}
       <Image
         src={stories[current].image || "/placeholder.png"}
         alt={stories[current].projectName}
-        fill
-        priority
-        className="object-cover rounded-2xl"
+        width={700}
+        height={700}
+        className="object-cover rounded-2xl w-full h-full"
       />
 
       {/* Title */}
@@ -66,12 +66,16 @@ const StoriesSlider = () => {
       <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 left-4 sm:left-6 md:left-6 right-4 sm:right-auto bg-gray-600/80 backdrop-blur-sm text-white flex items-start sm:items-center gap-4 sm:gap-8 p-3 sm:p-4 rounded-lg z-10">
         <div>
           <h1 className="text-sm sm:text-base">Starting Price</h1>
-          <p className="text-base sm:text-lg">{stories[current].startingPrice}</p>
+          <p className="text-base sm:text-lg">
+            {stories[current].startingPrice}
+          </p>
         </div>
 
         <div>
           <h1 className="text-sm sm:text-base">Payment Plan</h1>
-          <p className="text-xs sm:text-sm opacity-90">{stories[current].paymentPlan}</p>
+          <p className="text-xs sm:text-sm opacity-90">
+            {stories[current].paymentPlan}
+          </p>
         </div>
 
         <button className="bg-red-400 text-gray-800 rounded-lg flex items-center gap-1 px-3 py-2 hover:bg-gray-200 text-sm sm:text-base">
@@ -83,11 +87,15 @@ const StoriesSlider = () => {
       {/* Progress Bars */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[80%] sm:w-60 flex gap-2 z-10">
         {stories.map((_, index) => (
-          <div key={index} className="flex-1 h-1 bg-white/30 rounded overflow-hidden">
+          <div
+            key={index}
+            className="flex-1 h-1 bg-white/30 rounded overflow-hidden"
+          >
             <div
               className={`h-full bg-white ${index === current ? "animate-progress" : ""}`}
               style={{
-                width: index < current ? "100%" : index === current ? "100%" : "0%",
+                width:
+                  index < current ? "100%" : index === current ? "100%" : "0%",
                 animationDuration: `${duration}ms`,
               }}
             />

@@ -40,6 +40,7 @@ const AdminStats = () => {
         happyClients: Number(form.happyClients),
       });
       toast.success("Stats updated!");
+      e.target.reset();
     } catch (err) {
       toast.error("Failed to update stats.");
     } finally {

@@ -6,8 +6,12 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import { db } from "../../lib/firebase";
 import {
-  collection, addDoc, getDocs,
-  deleteDoc, doc, updateDoc,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  updateDoc,
 } from "firebase/firestore";
 
 const EMPTY_FORM = {
@@ -41,7 +45,9 @@ const AdminStory = () => {
     }
   }, []);
 
-  useEffect(() => { fetchData(); }, [fetchData]);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const closeModal = () => {
     setOpen(false);
@@ -61,11 +67,14 @@ const AdminStory = () => {
   const uploadImage = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET);
+    formData.append(
+      "upload_preset",
+      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
+    );
 
     const res = await fetch(
       `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
-      { method: "POST", body: formData }
+      { method: "POST", body: formData },
     );
     if (!res.ok) throw new Error("Image upload failed");
     const data = await res.json();
@@ -147,7 +156,7 @@ const AdminStory = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         {stories.map((item) => (
           <div key={item.id} className="border rounded-xl p-3">
             <div className="relative w-full h-40 mb-2">
@@ -185,13 +194,25 @@ const AdminStory = () => {
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl p-6 w-80 shadow-xl flex flex-col items-center gap-4">
             <div className="bg-red-100 p-4 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-8 h-8 text-red-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
               </svg>
             </div>
             <h3 className="text-lg font-bold text-gray-800">Delete Story?</h3>
             <p className="text-sm text-gray-500 text-center">
-              Are you sure you want to delete this story? This action cannot be undone.
+              Are you sure you want to delete this story? This action cannot be
+              undone.
             </p>
             <div className="flex gap-3 w-full">
               <button
@@ -215,7 +236,11 @@ const AdminStory = () => {
       {open && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="bg-gray-400 w-96 p-5 rounded-xl relative">
-            <button onClick={closeModal} className="absolute top-2 right-2" aria-label="Close">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2"
+              aria-label="Close"
+            >
               <X />
             </button>
 
@@ -233,7 +258,12 @@ const AdminStory = () => {
                 </div>
               )}
 
-              <input type="file" name="image" accept="image/*" onChange={handleChange} />
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={handleChange}
+              />
 
               <input
                 name="projectName"

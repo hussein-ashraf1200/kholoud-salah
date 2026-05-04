@@ -16,6 +16,9 @@ const HeroSection = () => {
             src="/profile.png"
             width={300}
             height={300}
+            quality={75} // ← بيقلل الحجم من غير ما يأثر على الجودة
+            priority
+            loading="eager"
             alt="kholoud image"
             className="-rotate-3 rounded-xl"
           />

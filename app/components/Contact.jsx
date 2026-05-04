@@ -21,6 +21,7 @@ const Contact = () => {
       )
       .then(() => {
         toast.success("Successfully toasted!");
+        e.target.reset(); // Reset form after successful submission
       })
       .catch((error) => {
         console.error("Failed to send:", error);
