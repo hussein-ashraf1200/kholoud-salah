@@ -52,11 +52,13 @@ const Navbar = () => {
                   <CircleUserRound className="text-[#115E59] cursor-pointer" />
                 </Link>
 
-                <UserButton afterSignOutUrl="/" />
+                <UserButton />
               </>
             ) : (
               <SignInButton mode="modal">
-                <button className="text-[#115E59] flex items-center">
+                <button onClick={()=>
+                  console.log("pushed")
+                } className="text-[#115E59] flex items-center">
                   <CircleUserRound />
                 </button>
               </SignInButton>
