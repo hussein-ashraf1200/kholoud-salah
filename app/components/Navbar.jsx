@@ -11,14 +11,15 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-
       {/* desktop */}
       <div className="sm:flex hidden justify-between items-center px-8 shadow-xl text-[#475569] rounded-2xl">
-
         {/* Logo */}
         <Image
           src="/logo.png"
           alt="logo"
+          quality={75} // ← بيقلل الحجم من غير ما يأثر على الجودة
+          priority
+          loading="eager"
           width={60}
           height={60}
           className="rounded-full"
@@ -26,7 +27,6 @@ const Navbar = () => {
 
         {/* Links */}
         <ul className="flex gap-6 items-center">
-
           <li className="hover:text-[#115E59] transition">
             <Link href="/#home">Home</Link>
           </li>
@@ -45,7 +45,6 @@ const Navbar = () => {
 
           {/* AUTH */}
           <li className="flex items-center gap-3">
-
             {isSignedIn ? (
               <>
                 <Link href="/dashboard">
@@ -56,16 +55,15 @@ const Navbar = () => {
               </>
             ) : (
               <SignInButton mode="modal">
-                <button onClick={()=>
-                  console.log("pushed") 
-                } className="text-[#115E59] flex items-center">
+                <button
+                  onClick={() => console.log("pushed")}
+                  className="text-[#115E59] flex items-center"
+                >
                   <CircleUserRound />
                 </button>
               </SignInButton>
             )}
-
           </li>
-
         </ul>
       </div>
 
@@ -80,28 +78,33 @@ const Navbar = () => {
       {/* mobile menu */}
       {isOpen && (
         <div className="sm:hidden fixed top-10 w-full h-screen backdrop-blur-sm shadow-md z-40 flex flex-col items-center gap-6 p-6 bg-white">
-
           <ul className="flex flex-col items-center gap-6 text-black">
-
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#home">Home</Link>
+              <Link onClick={() => setIsOpen(false)} href="/#home">
+                Home
+              </Link>
             </li>
 
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#units">Units</Link>
+              <Link onClick={() => setIsOpen(false)} href="/#units">
+                Units
+              </Link>
             </li>
 
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#about">About</Link>
+              <Link onClick={() => setIsOpen(false)} href="/#about">
+                About
+              </Link>
             </li>
 
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#contact">Contact</Link>
+              <Link onClick={() => setIsOpen(false)} href="/#contact">
+                Contact
+              </Link>
             </li>
 
             {/* AUTH MOBILE */}
             <li className="flex flex-col items-center gap-3">
-
               {isSignedIn ? (
                 <>
                   <Link href="/dashboard" onClick={() => setIsOpen(false)}>
@@ -120,9 +123,7 @@ const Navbar = () => {
                   </button>
                 </SignInButton>
               )}
-
             </li>
-
           </ul>
         </div>
       )}
