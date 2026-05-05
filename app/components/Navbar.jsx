@@ -57,7 +57,7 @@ const Navbar = () => {
             ) : (
               <SignInButton mode="modal">
                 <button onClick={()=>
-                  console.log("pushed")
+                  console.log("pushed") 
                 } className="text-[#115E59] flex items-center">
                   <CircleUserRound />
                 </button>
