@@ -26,7 +26,7 @@ const MainImages = ({ property }) => {
         <div className="w-1/3 flex flex-col gap-2">
           {extras.length > 0
             ? // ✅ لو في صور إضافية اعرضها
-              extras.slice(0, 2).map((url, i) => (
+              extras.slice(0, 3).map((url, i) => (
                 <div key={i} className="relative  ">
                   <Image
                     width={400}
