@@ -5,46 +5,47 @@ const MainImages = ({ property }) => {
   if (!property) return null;
 
   const thumb = property.thumb || "/placeholder.png";
-  const extras = property.images || []; // ✅ الصور الإضافية
+  const extras = property.images || [];
 
   return (
     <div className="flex justify-center items-center p-4 mt-20">
-      <div className="flex gap-4 w-full max-w-6xl">
+      <div className="flex gap-4 w-full max-w-6xl h-125">
         {/* Left Big Image */}
-        <div className="w-2/3 relative ">
+        <div className="w-2/3 h-full">
           <Image
-            width={850}
-            height={850}
+            width={900}
+            height={500}
             alt={property.title || "Main Image"}
             src={thumb}
-            className="object-cover rounded-lg"
-            priority
+            className="object-cover rounded-lg w-full h-full"
+            loading="lazy"
           />
         </div>
 
         {/* Right Small Images */}
-        <div className="w-1/3 flex flex-col gap-2">
+        <div className="w-1/3 h-full flex flex-col gap-2">
           {extras.length > 0
-            ? // ✅ لو في صور إضافية اعرضها
-              extras.slice(0, 3).map((url, i) => (
-                <div key={i} className="relative  ">
+            ? extras.slice(0, 2).map((url, i) => (
+                <div key={i} className="h-1/2">
                   <Image
                     width={400}
-                    height={400}
+                    height={245}
                     alt={`Image ${i + 1}`}
                     src={url}
-                    className="object-cover rounded-lg"
+                    className="object-cover rounded-lg w-full h-full"
+                    loading="lazy"
                   />
                 </div>
               ))
-            : // ✅ لو مفيش صور إضافية اعرض الـ thumb
-              [1, 2, 3].map((i) => (
-                <div key={i} className="relative w-full h-28">
+            : [1, 2].map((i) => (
+                <div key={i} className="h-1/2">
                   <Image
-                    fill
+                    width={400}
+                    height={245}
                     alt={`Image ${i}`}
                     src={thumb}
-                    className="object-cover rounded-lg"
+                    className="object-cover rounded-lg w-full h-full"
+                    loading="lazy"
                   />
                 </div>
               ))}

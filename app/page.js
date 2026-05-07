@@ -5,7 +5,7 @@ import Skills from "./components/Skills";
 
 export default function Home() {
   return (
-    <div className=" p-2 bg-[#F8FAFB]">
+    <div className=" p-2  bg-[#F8FAFB]">
       <main className="">
         <HeroSection />
         <RealStats />

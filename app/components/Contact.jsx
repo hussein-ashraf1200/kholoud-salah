@@ -111,6 +111,7 @@ const Contact = () => {
               src="/icons/facebook.svg"
               alt="facebook"
               className="w-8 h-8 hover:scale-110 transition"
+              loading="lazy"
             />
           </a>
           <a
@@ -124,6 +125,7 @@ const Contact = () => {
               src="/icons/whatsapp.svg"
               alt="whatsapp"
               className="w-8 h-8 hover:scale-110 transition"
+              loading="lazy"
             />
           </a>
           <a
@@ -137,6 +139,7 @@ const Contact = () => {
               src="/icons/instagram.svg"
               alt="instagram"
               className="w-8 h-8 hover:scale-110 transition"
+              loading="lazy"
             />
           </a>
         </div>

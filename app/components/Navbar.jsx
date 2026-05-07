@@ -7,7 +7,8 @@ import { useUser, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
+  const isAdmin = user?.publicMetadata?.role === "admin";
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
@@ -15,11 +16,10 @@ const Navbar = () => {
       <div className="sm:flex hidden justify-between items-center px-8 shadow-xl text-[#475569] rounded-2xl">
         {/* Logo */}
         <Image
-          src="/logo.png"
+          src="/logo.webp"
           alt="logo"
           quality={75} // ← بيقلل الحجم من غير ما يأثر على الجودة
           priority
-          loading="eager"
           width={60}
           height={60}
           className="rounded-full"
@@ -47,18 +47,17 @@ const Navbar = () => {
           <li className="flex items-center gap-3">
             {isSignedIn ? (
               <>
-                <Link href="/dashboard">
-                  <CircleUserRound className="text-[#115E59] cursor-pointer" />
-                </Link>
-
+                {/* بيظهر بس لو admin */}
+                {isAdmin && (
+                  <Link href="/dashboard">
+                    <CircleUserRound className="text-[#115E59] cursor-pointer" />
+                  </Link>
+                )}
                 <UserButton />
               </>
             ) : (
               <SignInButton mode="modal">
-                <button
-                  onClick={() => console.log("pushed")}
-                  className="text-[#115E59] flex items-center"
-                >
+                <button className="text-[#115E59] flex items-center">
                   <CircleUserRound />
                 </button>
               </SignInButton>
@@ -77,8 +76,12 @@ const Navbar = () => {
 
       {/* mobile menu */}
       {isOpen && (
-        <div className="sm:hidden fixed top-10 w-full h-screen backdrop-blur-sm shadow-md z-40 flex flex-col items-center gap-6 p-6 bg-white">
-          <ul className="flex flex-col items-center gap-6 text-black">
+        <div
+          className="sm:hidden fixed top-10 w-full h-screen backdrop-blur-sm 
+        shadow-md z-40 flex flex-col items-center gap-6 p-6 
+        "
+        >
+          <ul className="flex flex-col items-center font-bold gap-6 text-black">
             <li>
               <Link onClick={() => setIsOpen(false)} href="/#home">
                 Home
@@ -107,11 +110,13 @@ const Navbar = () => {
             <li className="flex flex-col items-center gap-3">
               {isSignedIn ? (
                 <>
-                  <Link href="/dashboard" onClick={() => setIsOpen(false)}>
-                    <CircleUserRound className="text-[#115E59]" />
-                  </Link>
-
-                  <UserButton afterSignOutUrl="/" />
+                  {/* بيظهر بس لو admin */}
+                  {isAdmin && (
+                    <Link href="/dashboard" onClick={() => setIsOpen(false)}>
+                      <CircleUserRound className="text-[#115E59]" />
+                    </Link>
+                  )}
+                  <UserButton />
                 </>
               ) : (
                 <SignInButton mode="modal">

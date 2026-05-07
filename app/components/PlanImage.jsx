@@ -60,11 +60,12 @@ const PlanImage = ({ selectedProperty }) => {
           <div className="flex gap-2 items-center">
             <div className="">
               <Image
-                src="/logo.png"
+                src="/profile.webp"
                 width={64}
                 height={64}
                 alt="kholoud image"
-                className="rounded-full object-cover"
+                className="rounded-full mt-4 object-cover"
+                loading="lazy"
               />
             </div>
 

@@ -33,28 +33,31 @@ const Card = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 p-4">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
         {properties.slice(0, visible).map((property) => (
           <div
             key={property.id}
-            className="rounded-xl overflow-hidden shadow-lg hover:shadow-3xl hover:scale-105 transition"
+            className="rounded-xl  shadow-lg hover:shadow-3xl 
+            hover:scale-105 transition"
           >
-            <div className="relative">
-              <div className="relative w-full h-48">
+            <div className="relative ">
+              <div className="w-full sm:h-52 h-32 rounded-t-xl overflow-hidden">
                 <Image
                   src={property.thumb || "/placeholder.png"} // ✅ thumb من Firestore
                   width={400}
-                  height={400}
+                  height={200}
                   alt={property.title || "Property"}
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 640px) 10vw, 25vw" // ← أضف السطر ده
                 />
               </div>
+
               <Link
                 className="text-[#134E4A] cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-[#F8FAFB] hover:bg-[#E0E0E0] transition"
                 href={`/selectedUnit/${property.id}`}
                 onClick={() => {
                   setSelectedProperty(property);
-                  console.log("Selected:", property);
                 }}
               >
                 <Eye />

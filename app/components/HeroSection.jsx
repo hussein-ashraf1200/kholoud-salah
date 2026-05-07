@@ -1,7 +1,6 @@
-"use client";
-import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
 import React from "react";
+import TypewriterText from "./TypewriterText";
 
 const HeroSection = () => {
   return (
@@ -13,12 +12,10 @@ const HeroSection = () => {
       <div className="sm:w-1/2 w-full flex justify-center  items-center  ">
         <div className="  p-4 rounded-2xl rotate-3 sm:shadow-blue-400 shadow-2xl hover:rotate-0 transition duration-300">
           <Image
-            src="/profile.png"
+            src="/profile.webp"
             width={300}
             height={300}
-            quality={75} // ← بيقلل الحجم من غير ما يأثر على الجودة
             priority
-            loading="eager"
             alt="kholoud image"
             className="-rotate-3 rounded-xl"
           />
@@ -27,22 +24,11 @@ const HeroSection = () => {
       {/* right side */}
       <div className="sm:w-1/2 w-full ">
         <div>
-          <div className="flex items-center    ">
+          <div className="flex items-center">
             <h1 className="sm:text-3xl text-2xl font-bold text-primary">
               Helping you to get
               <div className="w-28 h-8">
-                <span className="text-[#00666D] font-bold w-full ">
-                  <Typewriter
-                    className=""
-                    words={["Best", "Cheap", "Near", "Perfect"]}
-                    loop={0} // 0 for infinite
-                    cursor
-                    cursorStyle="|"
-                    typeSpeed={100}
-                    deleteSpeed={50}
-                    delaySpeed={1000}
-                  />
-                </span>
+                <TypewriterText />
               </div>
               Property
             </h1>

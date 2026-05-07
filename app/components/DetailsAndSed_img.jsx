@@ -75,6 +75,7 @@ const DetailsAndSed_img = ({ property }) => {
                   height={400}
                   alt={`Image ${i + 2}`}
                   src={url}
+                  loading="lazy"
                   className="object-cover rounded-lg"
                 />
               </div>
@@ -88,6 +89,7 @@ const DetailsAndSed_img = ({ property }) => {
                   alt="Image 2"
                   src={property.thumb || "/placeholder.png"}
                   className="object-cover rounded-lg"
+                  loading="lazy"
                 />
               </div>
               <div className="relative w-full h-48">
@@ -96,6 +98,7 @@ const DetailsAndSed_img = ({ property }) => {
                   alt="Image 3"
                   src={property.thumb || "/placeholder.png"}
                   className="object-cover rounded-lg"
+                  loading="lazy"
                 />
               </div>
             </>

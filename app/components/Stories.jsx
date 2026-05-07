@@ -52,8 +52,7 @@ const StoriesSlider = () => {
       <Image
         src={stories[current].image || "/placeholder.png"}
         alt={stories[current].projectName}
-        width={700}
-        height={700}
+        fill
         className="object-cover rounded-2xl w-full h-full"
       />
 
