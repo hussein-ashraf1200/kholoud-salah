@@ -10,6 +10,7 @@ const Navbar = () => {
   const { isSignedIn, user } = useUser();
   const isAdmin = user?.publicMetadata?.role === "admin";
 
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       {/* desktop */}

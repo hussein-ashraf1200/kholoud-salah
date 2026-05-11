@@ -4,7 +4,11 @@ import Image from "next/image";
 
 const PlanImage = ({ selectedProperty }) => {
   if (!selectedProperty) return null;
-
+  const propertyLink = `${window.location.origin}/selectedUnit/${selectedProperty.id}`;
+  const message = `
+I want more details about this property:
+${propertyLink}
+`;
   return (
     <div
       className="  flex sm:flex-row  flex-col justify-center items-start 
@@ -46,7 +50,7 @@ const PlanImage = ({ selectedProperty }) => {
             Contact Agent
           </a>
           <a
-            href="https://wa.me/201128192366?text=Hi%20I%20want%20more%20details"
+            href={`https://wa.me/201128192366?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full mt-3 text-white bg-[#00666D] flex justify-center items-center gap-4 p-4 rounded-lg hover:bg-amber-600 transform transition"

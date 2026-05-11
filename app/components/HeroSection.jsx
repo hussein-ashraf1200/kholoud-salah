@@ -34,7 +34,7 @@ const HeroSection = () => {
             </h1>
           </div>
           <p>
-            With over a decade of expertise in high-end residential markets,
+            With over a 5 years of expertise in high-end residential markets,
             Kholoud Salah provides a bespoke advisory service tailored to the
             most discerning clients. Every home tells a story; let us help you
             write your next chapter in luxury.
@@ -47,7 +47,7 @@ const HeroSection = () => {
               View Units
             </a>
             <a
-              href="https://wa.me/201128192366?text=Hi%20I%20want%20more%20details"
+              href="https://wa.me/201128192366?text=I%20want%20a%20real%20estate%20consultation"
               target="_blank"
               rel="noopener noreferrer"
               className="w-28 inline-block text-center p-2 rounded-2xl text-white bg-[#00666D] cursor-pointer"
