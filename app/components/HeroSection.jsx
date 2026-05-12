@@ -20,6 +20,7 @@ const HeroSection = () => {
             height={300}
             alt="kholoud image"
             className="-rotate-3 rounded-xl"
+            priority
           />
         </div>
       </div>
