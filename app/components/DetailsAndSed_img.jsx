@@ -23,11 +23,16 @@ const DetailsAndSed_img = ({ property }) => {
               ? `${Number(property.price).toLocaleString()} EGP`
               : ""}
           </p>
-          <p className="text-xl text-gray-400 underline mt-8">Description :</p>
-          <p>{property.description}</p>
-
+          <div>
+            <p className="text-xl text-gray-400 underline mt-8">
+              Description :
+            </p>
+            <p className="w-full h-fit wrap-break-word mt-4">
+              {property.description}
+            </p>
+          </div>
           <div className="flex justify-around mt-20">
-            <div className="flex justify-center bg-white p-1 rounded-2xl items-center flex-col">
+            <div className="flex justify-center p-1 rounded-2xl items-center flex-col">
               <span className="text-[#115E59]">
                 <Bed />
               </span>

@@ -25,9 +25,9 @@ const Infocard = () => {
   }, []);
 
   return (
-    <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+    <div className=" grid grid-cols-3">
       {/* Units */}
-      <div className="bg-[#ECEEEF] rounded-2xl shadow-2xl w-28 sm:w-30 p-3 flex flex-col justify-center items-center">
+      <div className="bg-[#ECEEEF] rounded-2xl shadow-2xl w-24 sm:w-30 p-1 flex flex-col justify-center items-center">
         <LucideHome className="text-[#00666D] mb-1" />
         <p className="text-xl font-bold text-[#00666D]">
           <Counter to={stats.soldUnits} suffix="+" />
@@ -36,7 +36,7 @@ const Infocard = () => {
       </div>
 
       {/* Investment */}
-      <div className="bg-[#ECEEEF] rounded-2xl shadow-2xl w-28 sm:w-30 p-3 flex flex-col justify-center items-center">
+      <div className="bg-[#ECEEEF] rounded-2xl shadow-2xl w-24 sm:w-30 p-1 flex flex-col justify-center items-center">
         <CircleDollarSign className="text-[#00666D] mb-1" />
         <p className="text-xl font-bold text-[#00666D]">
           <Counter to={stats.investment} suffix="M+" />
@@ -45,7 +45,7 @@ const Infocard = () => {
       </div>
 
       {/* Clients */}
-      <div className="bg-[#ECEEEF] rounded-2xl shadow-2xl w-28 sm:w-30 p-3 flex flex-col justify-center items-center">
+      <div className="bg-[#ECEEEF] rounded-2xl shadow-2xl w-24 sm:w-30 p-1 flex flex-col justify-center items-center">
         <Smile className="text-[#00666D] mb-1" />
         <p className="text-xl font-bold text-[#00666D]">
           <Counter to={stats.happyClients} suffix="+" />

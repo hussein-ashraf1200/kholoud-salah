@@ -90,9 +90,15 @@ const Contact = () => {
           <Phone />
           <p>01128192366</p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <Mail />
-          <p>kholoud@ksrealestate.com</p>
+
+          <a
+            href="mailto:Kholoud2000.salah@gmail.com"
+            className="hover:text-blue-600 transition"
+          >
+            Kholoud2000.salah@gmail.com
+          </a>
         </div>
         <div className="flex gap-4">
           <MessageCircleCode />

@@ -308,10 +308,11 @@ const AdminCard = () => {
                   />
                 </div>
               )}
-              <label className="text-sm text-gray-700">
+              <label className="text-sm  text-gray-700">
                 Property Image (Main)
               </label>
               <input
+                className="w-full border p-2"
                 type="file"
                 name="image"
                 accept="image/*"
@@ -337,10 +338,9 @@ const AdminCard = () => {
                     </div>
                   </div>
                 )}
-              <label className="text-sm text-gray-700">
-                Extra Images (اختار أكتر من صورة)
-              </label>
+              <label className="text-sm text-gray-700">Extra Images</label>
               <input
+                className="w-full border p-2"
                 type="file"
                 name="extraImages"
                 accept="image/*"
@@ -348,7 +348,7 @@ const AdminCard = () => {
                 onChange={handleChange}
               />
               {form.extraImages.length > 3 && (
-                <p className="text-red-600 text-sm">Maximum 3 images only!</p>
+                <p className="text-red-600 text-sm">Maximum 5 images only!</p>
               )}
 
               {/* Plan Preview */}
@@ -366,6 +366,7 @@ const AdminCard = () => {
               )}
               <label className="text-sm text-gray-700">Floor Plan Image</label>
               <input
+                className="w-full border p-2"
                 type="file"
                 name="plan"
                 accept="image/*"

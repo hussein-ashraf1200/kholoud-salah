@@ -46,8 +46,12 @@ const StoriesSlider = () => {
     );
   }
 
+  const projectName = stories[current].projectName;
+
+  const message = `I want more details about this project: ${projectName}`;
+
   return (
-    <div className="relative flex flex-col w-screen sm:w-full h-[40vh] sm:h-[60vh] md:h-[70vh] -mx-4 sm:mx-0 mt-4">
+    <div className="relative flex flex-col w-screen sm:w-full h-[40vh] sm:h-[60vh]  -mx-4 sm:mx-0 mt-4">
       {/* Image */}
       <Image
         src={stories[current].image || "/placeholder.png"}
@@ -77,10 +81,15 @@ const StoriesSlider = () => {
           </p>
         </div>
 
-        <button className="bg-red-400 text-gray-800 rounded-lg flex items-center gap-1 px-3 py-2 hover:bg-gray-200 text-sm sm:text-base">
+        <a
+          href={`https://wa.me/201128192366?text=${encodeURIComponent(message)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-red-400 text-gray-800 rounded-lg flex items-center gap-1 px-3 py-2 hover:bg-gray-200 text-sm sm:text-base"
+        >
           Learn More
           <ChevronRight size={18} />
-        </button>
+        </a>
       </div>
 
       {/* Progress Bars */}

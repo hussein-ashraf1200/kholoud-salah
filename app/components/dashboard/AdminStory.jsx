@@ -209,7 +209,7 @@ const AdminStory = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-lg font-bold text-gray-800">Delete Story?</h3>
+            <h3 className="text-lg font-bold text-gray-800">Delete Story ?</h3>
             <p className="text-sm text-gray-500 text-center">
               Are you sure you want to delete this story? This action cannot be
               undone.
@@ -263,6 +263,7 @@ const AdminStory = () => {
                 name="image"
                 accept="image/*"
                 onChange={handleChange}
+                className="w-full border p-2 "
               />
 
               <input
