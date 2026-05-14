@@ -22,7 +22,7 @@ const PlanImage = ({ selectedProperty }) => {
             />
           </div>
         ) : (
-          <p className="text-white">No plan available</p>
+          <p className="text-black">No plan available</p>
         )}
       </div>
       {/* left side */}
@@ -39,6 +39,7 @@ const PlanImage = ({ selectedProperty }) => {
           <a
             href="tel:+201234567890"
             className="w-full mt-3 text-white bg-[#00666D] flex justify-center items-center gap-4 p-4 rounded-lg hover:bg-amber-600"
+            aria-label="Call the agent"
           >
             <span>
               <Phone />
@@ -46,6 +47,7 @@ const PlanImage = ({ selectedProperty }) => {
             Contact Agent
           </a>
           <a
+            aria-label="Inquire about the property via WhatsApp"
             href={`https://wa.me/201128192366?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"

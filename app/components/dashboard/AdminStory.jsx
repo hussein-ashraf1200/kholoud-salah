@@ -148,6 +148,7 @@ const AdminStory = () => {
     <div className="p-4 bg-gray-100 rounded-xl">
       <div className="flex justify-end mb-4">
         <button
+          aria-label="Add story"
           onClick={() => setOpen(true)}
           className="bg-green-800 text-white px-4 py-2 rounded-xl"
         >
@@ -173,12 +174,14 @@ const AdminStory = () => {
 
             <div className="flex gap-2 mt-2">
               <button
+                aria-label="Edit story"
                 onClick={() => handleEdit(item)}
                 className="bg-blue-500 text-white px-2 py-1 rounded text-sm"
               >
                 Edit
               </button>
               <button
+                aria-label="Delete story"
                 onClick={() => setDeleteId(item.id)} // ✅
                 className="bg-red-500 text-white px-2 py-1 rounded text-sm"
               >
@@ -216,12 +219,14 @@ const AdminStory = () => {
             </p>
             <div className="flex gap-3 w-full">
               <button
+                aria-label="Cancel delete"
                 onClick={() => setDeleteId(null)}
                 className="flex-1 border border-gray-300 text-gray-700 py-2 rounded-xl hover:bg-gray-100 transition"
               >
                 Cancel
               </button>
               <button
+                aria-label="Delete story"
                 onClick={handleDelete}
                 className="flex-1 bg-red-500 text-white py-2 rounded-xl hover:bg-red-600 transition"
               >
@@ -239,7 +244,7 @@ const AdminStory = () => {
             <button
               onClick={closeModal}
               className="absolute top-2 right-2"
-              aria-label="Close"
+              aria-label="Close modal"
             >
               <X />
             </button>
@@ -293,6 +298,7 @@ const AdminStory = () => {
               />
 
               <button
+                aria-label={editId ? "Update story" : "Add story"}
                 type="submit"
                 disabled={loading}
                 className="w-full bg-black text-white p-2 rounded disabled:opacity-50"

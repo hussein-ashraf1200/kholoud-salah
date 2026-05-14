@@ -10,7 +10,6 @@ const Navbar = () => {
   const { isSignedIn, user } = useUser();
   const isAdmin = user?.publicMetadata?.role === "admin";
 
-
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       {/* desktop */}
@@ -71,6 +70,7 @@ const Navbar = () => {
       <button
         className="sm:hidden fixed right-4 top-2 text-black z-50"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         {isOpen ? <X /> : <Menu />}
       </button>
@@ -124,6 +124,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setIsOpen(false)}
                     className="text-[#115E59]"
+                    aria-label="Sign in"
                   >
                     Login
                   </button>

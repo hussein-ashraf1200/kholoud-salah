@@ -75,6 +75,7 @@ const Contact = () => {
             />
           </div>
           <button
+            aria-label="Send inquiry"
             type="submit"
             className="bg-[#F5FEFF] cursor-pointer text-[#134E4A] hover:bg-[#cad8d8] hover:text-[#090b0b] font-bold py-2 px-4 rounded-md mt-4"
           >
@@ -96,6 +97,7 @@ const Contact = () => {
           <a
             href="mailto:Kholoud2000.salah@gmail.com"
             className="hover:text-blue-600 transition"
+            aria-label="Send an email to Kholoud Salah"
           >
             Kholoud2000.salah@gmail.com
           </a>
@@ -110,6 +112,7 @@ const Contact = () => {
             href="https://www.facebook.com/share/1N4vg2BavC/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit our Facebook page"
           >
             <Image
               width={20}
@@ -124,6 +127,7 @@ const Contact = () => {
             href="https://wa.me/201128192366"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit our WhatsApp page"
           >
             <Image
               width={20}
@@ -138,6 +142,7 @@ const Contact = () => {
             href="https://www.instagram.com/kholoud_salah._?igsh=NnQ5eWtnM2ZlbWwx"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit our Instagram page"
           >
             <Image
               width={20}

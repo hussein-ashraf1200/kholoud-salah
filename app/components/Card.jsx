@@ -44,16 +44,16 @@ const Card = () => {
               <div className="w-full sm:h-52 h-32 rounded-t-xl overflow-hidden">
                 <Image
                   src={property.thumb || "/placeholder.png"} // ✅ thumb من Firestore
-                  width={400}
-                  height={200}
+                  fill
                   alt={property.title || "Property"}
                   className="object-cover"
                   loading="lazy"
-                  sizes="(max-width: 640px) 10vw, 25vw" // ← أضف السطر ده
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
 
               <Link
+                aria-label="Visit selected property details"
                 className="text-[#134E4A] cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-[#F8FAFB] hover:bg-[#E0E0E0] transition"
                 href={`/selectedUnit/${property.id}`}
                 onClick={() => {
@@ -88,7 +88,8 @@ const Card = () => {
       {visible < properties.length && (
         <div className="flex justify-center mt-6">
           <button
-            onClick={() => setVisible(visible + 4)}
+            aria-label="Show more properties"
+            onClick={() => setVisible(visible + 12)}
             className="w-32 p-2 rounded-2xl text-white bg-[#00666D] cursor-pointer hover:opacity-90"
           >
             Show More

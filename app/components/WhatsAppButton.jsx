@@ -5,6 +5,7 @@ const WhatsAppButton = () => {
   return (
     <a
       href="https://wa.me/201128192366?text=Hi%20I%20want%20more%20details"
+      aria-label="Inquire about the property via WhatsApp"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 hover:bg-green-400 text-white p-2 rounded-full shadow-lg transition transform hover:scale-110"

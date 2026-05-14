@@ -196,6 +196,7 @@ const AdminCard = () => {
     <div className="p-4 bg-gray-100 rounded-xl">
       <div className="flex justify-end mb-4">
         <button
+          aria-label="Add property"
           onClick={() => setOpen(true)}
           className="bg-green-800 text-white px-4 py-2 rounded-xl"
         >
@@ -222,12 +223,14 @@ const AdminCard = () => {
             <p className="text-sm text-gray-700">{item.location}</p>
             <div className="flex gap-2 mt-4">
               <button
+                aria-label="Edit property"
                 onClick={() => handleEdit(item)}
                 className="text-blue-500 text-sm rounded"
               >
                 <SquarePen />
               </button>
               <button
+                aria-label="Delete property"
                 onClick={() => setDeleteId(item.id)}
                 className="text-red-500 text-sm rounded"
               >
@@ -266,12 +269,14 @@ const AdminCard = () => {
             </p>
             <div className="flex gap-3 w-full">
               <button
+                aria-label="Cancel delete"
                 onClick={() => setDeleteId(null)}
                 className="flex-1 border border-gray-300 text-gray-700 py-2 rounded-xl hover:bg-gray-100 transition"
               >
                 Cancel
               </button>
               <button
+                aria-label="Delete property"
                 onClick={handleDelete}
                 className="flex-1 bg-red-500 text-white py-2 rounded-xl hover:bg-red-600 transition"
               >
@@ -458,6 +463,7 @@ const AdminCard = () => {
               />
 
               <button
+                aria-label="submit property form"
                 type="submit"
                 disabled={loading}
                 className="w-full bg-black text-white p-2 rounded disabled:opacity-50"

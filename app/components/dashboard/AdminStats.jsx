@@ -86,6 +86,7 @@ const AdminStats = () => {
         </div>
 
         <button
+          aria-label="Save stats"
           type="submit"
           disabled={loading}
           className="self-end bg-green-800 text-white px-4 py-2 rounded-xl disabled:opacity-50"

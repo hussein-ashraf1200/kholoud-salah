@@ -44,12 +44,14 @@ const HeroSection = () => {
           </p>
           <div className="flex mt-8 gap-4">
             <a
+              aria-label="View available units"
               href="#units"
               className="w-28 inline-block text-center p-2 rounded-2xl text-white bg-[#00666D] cursor-pointer"
             >
               View Units
             </a>
             <a
+              aria-label="Consult now"
               href="https://wa.me/201128192366?text=I%20want%20a%20real%20estate%20consultation"
               target="_blank"
               rel="noopener noreferrer"

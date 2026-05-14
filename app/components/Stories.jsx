@@ -83,6 +83,7 @@ const StoriesSlider = () => {
 
         <a
           href={`https://wa.me/201128192366?text=${encodeURIComponent(message)}`}
+          aria-label="Inquire about the project via WhatsApp"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-red-400 text-gray-800 rounded-lg flex items-center gap-1 px-3 py-2 hover:bg-gray-200 text-sm sm:text-base"
