@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://kholoud-salah.vercel.app/";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://kholoud-salah.vercel.app";
 
 export const metadata = {
   title: "Kholoud Salah | Real Estate - Ras El Hikma & North Coast",
