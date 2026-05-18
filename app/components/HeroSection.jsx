@@ -11,15 +11,15 @@ const HeroSection = () => {
       {/* left side */}
       <div className="sm:w-1/2 w-full flex justify-center  items-center  ">
         <div
-          className="  p-4 rounded-2xl rotate-3 sm:shadow-blue-400 shadow-2xl 
-        hover:rotate-0 transition duration-300   "
+          className="   rounded-2xl  sm:shadow-blue-400 shadow-2xl 
+         transition duration-300   "
         >
           <Image
             src="/profile.webp"
             width={300}
             height={300}
             alt="kholoud image"
-            className="-rotate-3 rounded-xl"
+            className=" rounded-2xl  object-cover"
             priority
           />
         </div>

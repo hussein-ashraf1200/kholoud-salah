@@ -15,32 +15,44 @@ const Navbar = () => {
       {/* desktop */}
       <div className="sm:flex hidden justify-between items-center px-8 shadow-xl text-[#475569] rounded-2xl">
         {/* Logo */}
-        <Image
-          src="/logo.webp"
-          alt="logo"
-          quality={75} // ← بيقلل الحجم من غير ما يأثر على الجودة
-          priority
-          width={60}
-          height={60}
-          className="rounded-full"
-        />
+
+        <Link href="/" aria-label="Kholoud Salah Real Estate - Go to homepage">
+          <Image
+            src="/logo.webp"
+            alt="logo"
+            quality={75} // ← بيقلل الحجم من غير ما يأثر على الجودة
+            priority
+            width={60}
+            height={60}
+            className="rounded-full"
+            aria-hidden="true"
+          />
+        </Link>
 
         {/* Links */}
-        <ul className="flex gap-6 items-center">
+        <ul className="flex gap-6 items-center bg-gray-100 font-bold">
           <li className="hover:text-[#115E59] transition">
-            <Link href="/#home">Home</Link>
+            <Link aria-label="go to home" href="/#home">
+              Home
+            </Link>
           </li>
 
           <li className="hover:text-[#115E59] transition">
-            <Link href="/#units">Units</Link>
+            <Link aria-label="go to units" href="/#units">
+              Units
+            </Link>
           </li>
 
           <li className="hover:text-[#115E59] transition">
-            <Link href="/#about">About</Link>
+            <Link aria-label="go to about" href="/#about">
+              About
+            </Link>
           </li>
 
           <li className="hover:text-[#115E59] transition">
-            <Link href="/#contact">Contact</Link>
+            <Link aria-label="go to contact" href="/#contact">
+              Contact
+            </Link>
           </li>
 
           {/* AUTH */}
@@ -49,16 +61,22 @@ const Navbar = () => {
               <>
                 {/* بيظهر بس لو admin */}
                 {isAdmin && (
-                  <Link href="/dashboard">
-                    <CircleUserRound className="text-[#115E59] cursor-pointer" />
+                  <Link aria-label="Go to admin dashboard" href="/dashboard">
+                    <CircleUserRound
+                      aria-hidden="true"
+                      className="text-[#115E59] cursor-pointer"
+                    />
                   </Link>
                 )}
                 <UserButton />
               </>
             ) : (
               <SignInButton mode="modal">
-                <button className="text-[#115E59] flex items-center">
-                  <CircleUserRound />
+                <button
+                  aria-label="Sign in to your account"
+                  className="text-[#115E59] flex items-center"
+                >
+                  <CircleUserRound aria-hidden="true" />
                 </button>
               </SignInButton>
             )}
@@ -72,7 +90,7 @@ const Navbar = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
-        {isOpen ? <X /> : <Menu />}
+        {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
       </button>
 
       {/* mobile menu */}
@@ -84,25 +102,41 @@ const Navbar = () => {
         >
           <ul className="flex flex-col items-center font-bold gap-6 text-black">
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#home">
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/#home"
+                aria-label="Go to Home section"
+              >
                 Home
               </Link>
             </li>
 
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#units">
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/#units"
+                aria-label="Go to Units section"
+              >
                 Units
               </Link>
             </li>
 
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#about">
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/#about"
+                aria-label="Go to About section"
+              >
                 About
               </Link>
             </li>
 
             <li>
-              <Link onClick={() => setIsOpen(false)} href="/#contact">
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/#contact"
+                aria-label="Go to Contact section"
+              >
                 Contact
               </Link>
             </li>
@@ -113,7 +147,11 @@ const Navbar = () => {
                 <>
                   {/* بيظهر بس لو admin */}
                   {isAdmin && (
-                    <Link href="/dashboard" onClick={() => setIsOpen(false)}>
+                    <Link
+                      aria-label="Go to admin dashboard"
+                      href="/dashboard"
+                      onClick={() => setIsOpen(false)}
+                    >
                       <CircleUserRound className="text-[#115E59]" />
                     </Link>
                   )}

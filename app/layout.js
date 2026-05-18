@@ -17,9 +17,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://your-site.vercel.app";
+
 export const metadata = {
-  title: "Kholoud Salah",
-  description: "Real Estate Agent - Kholoud Salah",
+  title: "Kholoud Salah | Real Estate - Ras El Hikma & North Coast",
+  description:
+    "Find luxury properties in Ras El Hikma & Modon. Sea view, lagoon view, fully finished with ACs, ready to move. Contact Kholoud Salah for the best real estate deals.",
+  keywords: [
+    "Ras El Hikma",
+    "Modon Ras El Hikma",
+    "Sea view apartments",
+    "Lagoon view",
+    "Fully finished with ACs",
+    "Ready to move",
+    "North Coast properties",
+    "Real estate Egypt",
+    "Kholoud Salah real estate",
+  ],
+  openGraph: {
+    title: "Kholoud Salah | Real Estate - Ras El Hikma & North Coast",
+    description:
+      "Luxury sea view & lagoon view properties in Ras El Hikma. Fully finished, ready to move.",
+    url: siteUrl, // ✅ URL الموقع
+    siteName: "Kholoud Salah Real Estate",
+    images: [
+      {
+        url: `${siteUrl}/og-image.jpg`, // ✅ صورة منفصلة
+        width: 1200,
+        height: 630,
+        alt: "Kholoud Salah Real Estate - Ras El Hikma luxury properties",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -27,9 +59,9 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html
         lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased  `}
+        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       >
-        <body className=" h-full  flex flex-col ">
+        <body className="h-full flex flex-col">
           <Navbar />
           <SelectedPropertyProvider>{children}</SelectedPropertyProvider>
           <Toaster position="top-center" />

@@ -53,14 +53,14 @@ const Card = () => {
               </div>
 
               <Link
-                aria-label="Visit selected property details"
+                aria-label={`View details for ${property.title || "this property"} in ${property.location || ""}`}
                 className="text-[#134E4A] cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-[#F8FAFB] hover:bg-[#E0E0E0] transition"
                 href={`/selectedUnit/${property.id}`}
                 onClick={() => {
                   setSelectedProperty(property);
                 }}
               >
-                <Eye />
+                <Eye aria-hidden="true" />
               </Link>
             </div>
 
@@ -70,15 +70,15 @@ const Card = () => {
                   ? `${Number(property.price).toLocaleString()} EGP`
                   : ""}
               </p>
-              <h3 className="text-lg font-semibold text-[#191C1D]">
+              <h1 className="text-lg font-semibold text-[#191C1D]">
                 {property.title}
-              </h3>
-              <h4 className="text-[#3E494A] flex items-center gap-1 mt-1">
+              </h1>
+              <h2 className="text-[#3E494A] flex items-center gap-1 mt-1">
                 <span className="text-[#134E4A]">
                   <MapPinHouse />
                 </span>
                 {property.location}
-              </h4>
+              </h2>
             </div>
           </div>
         ))}
