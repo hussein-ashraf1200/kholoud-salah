@@ -89,7 +89,7 @@ const StoriesSlider = () => {
           className="bg-red-400 text-gray-800 rounded-lg flex items-center gap-1 px-3 py-2 hover:bg-gray-200 text-sm sm:text-base"
         >
           Learn More
-          <ChevronRight aria-hidden="true" size={18} />
+          <span className="sr-only">about this project</span>
         </a>
       </div>
 

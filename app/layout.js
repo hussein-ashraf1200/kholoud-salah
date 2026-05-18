@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://your-site.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://kholoud-salah.vercel.app/";
 
 export const metadata = {
   title: "Kholoud Salah | Real Estate - Ras El Hikma & North Coast",
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "Kholoud Salah Real Estate",
     images: [
       {
-        url: `${siteUrl}/og-image.jpg`, // ✅ صورة منفصلة
+        url: `${siteUrl}/profile.webp`, // ✅ صورة منفصلة
         width: 1200,
         height: 630,
         alt: "Kholoud Salah Real Estate - Ras El Hikma luxury properties",

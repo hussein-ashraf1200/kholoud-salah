@@ -21,6 +21,7 @@ const HeroSection = () => {
             alt="kholoud image"
             className=" rounded-2xl  object-cover"
             priority
+            fetchPriority="high"
           />
         </div>
       </div>
@@ -30,7 +31,7 @@ const HeroSection = () => {
           <div className="flex items-center">
             <h1 className="sm:text-3xl text-2xl font-bold text-primary">
               Helping you to get
-              <div className="w-28 h-8">
+              <div className="w-28 h-8 ">
                 <TypewriterText />
               </div>
               Property
