@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "Kholoud Salah Real Estate",
     images: [
       {
-        url: `${siteUrl}/logo.webp`, // ✅ صورة منفصلة
+        url: `${siteUrl}/og-image.webp`, // ✅ صورة منفصلة
         width: 1200,
         height: 630,
         alt: "Kholoud Salah Real Estate - Ras El Hikma luxury properties",
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
       <html
         lang="en"
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >
+      >لهف
         <body className="h-full flex flex-col">
           <Navbar />
           <SelectedPropertyProvider>{children}</SelectedPropertyProvider>
