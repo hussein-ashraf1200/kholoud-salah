@@ -1,7 +1,13 @@
 User-agent: *
 Allow: /
 
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
 Disallow: /dashboard
 Disallow: /admin
 
-Sitemap: https:https://kholoud-salah.vercel.app//sitemap.xml
+Sitemap: https://kholoud-salah.vercel.app/sitemap.xml
