@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
       <html
         lang="en"
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >لهف
+      >
         <body className="h-full flex flex-col">
           <Navbar />
           <SelectedPropertyProvider>{children}</SelectedPropertyProvider>
