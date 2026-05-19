@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "Kholoud Salah Real Estate",
     images: [
       {
-        url: `${siteUrl}/profile.webp`, // ✅ صورة منفصلة
+        url: `${siteUrl}/logo.webp`, // ✅ صورة منفصلة
         width: 1200,
         height: 630,
         alt: "Kholoud Salah Real Estate - Ras El Hikma luxury properties",
